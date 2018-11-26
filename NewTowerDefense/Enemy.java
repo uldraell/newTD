@@ -56,7 +56,7 @@ public abstract class Enemy extends BetterActor
     
     public void attack(int dmg){
         if((this.getHP() - dmg) <= 0){
-            ((TDWorld) getWorld()).addMoney(); // Increment the money counter
+            ((TDWorld) getWorld()).addMoney(this.getBounty()); // Increment the money counter
             getWorld().removeObject(this);
         } else {
             this.setHP(this.getHP() - dmg);
@@ -71,4 +71,6 @@ public abstract class Enemy extends BetterActor
     public abstract int getHP();
     
     public abstract void setHP(int newHP);
+    
+    public abstract int getBounty();
 }

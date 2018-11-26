@@ -29,7 +29,7 @@ public class TurretButton extends BetterActor
         if (Greenfoot.mouseDragEnded(this))
         {
             Actor choice = getOneIntersectingObject(TurretButton.class);
-            ((TDWorld) getWorld()).placeTurret(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            ((TDWorld) getWorld()).placeBallistae(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
             if (choice != null) setLocation(choice.getX(), choice.getY());
             // optional else block
             else setLocation(900,850);

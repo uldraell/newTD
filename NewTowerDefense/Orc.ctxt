@@ -11,4 +11,6 @@ comment4.params=
 comment4.target=int\ getHP()
 comment5.params=newHP
 comment5.target=void\ setHP(int)
-numComments=6
+comment6.params=
+comment6.target=int\ getBounty()
+numComments=7

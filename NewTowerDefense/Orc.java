@@ -41,4 +41,8 @@ public class Orc extends Enemy
     public void setHP(int newHP){
         hp = newHP;
     }
+    
+    public int getBounty(){
+        return 100;
+    }
 }
