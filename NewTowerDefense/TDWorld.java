@@ -1,4 +1,3 @@
-
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
@@ -15,7 +14,11 @@ public class TDWorld extends World
 
     private int money;   // How much money the player has
     private int lives;   // How many lives the player has
+//{welle1,well2,well3}
 
+//welle3 = new {1,3,2,2,2,4,1,1,1,2,2,2,3}
+//{1,3,2,2,2,4,1,1,1,2,2,2,3}
+//{1,3,2,2,2,4,1,1,1,2,2,2,3}
  
     public TDWorld()
     {    
@@ -65,8 +68,9 @@ public class TDWorld extends World
         }
         
     
+        int rand = Greenfoot.getRandomNumber(10);
         
-        if(delay > 120) { // Check the counter for bloon spawning
+        if(delay > 120 && (rand == 5 )) { // Check the counter for bloon spawning
             Enemy b = null; // Initialize bloon
 
             switch(Greenfoot.getRandomNumber(3)) { // Randomly choose bloon color
@@ -91,7 +95,7 @@ public class TDWorld extends World
     }
     
     public void placeTurret(int x, int y){
-        Tower t = new Tower();
+        Ballistae t = new Ballistae();
         addObject(t, x, y);
     }
     

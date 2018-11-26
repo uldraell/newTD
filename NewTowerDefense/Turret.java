@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import java.util.List;
+import java.util.ListIterator;
 /**
  * Write a description of class Turret here.
  * 
@@ -8,37 +9,35 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public abstract class Turret extends BetterActor
 {
-    private static int DART_SPEED = 3;
-    protected Enemy target; // The enemy that the projectile/beam is following
-      
-    protected int projSpeed;
-    protected int beamlength;
-    protected int damage = 50;
+    protected static int DEFAULT_DELAY = 100;
+    protected static int DEFAULT_RANGE = 150;
+    protected static int DEFAULT_PRICE = 100;
 
-    // Constructor that takes a Bloon to target
-    public Turret(Enemy target) {
-        this.target = target; // Set the target variable
-        setImage("pfeil.png"); // Set the image to a dart
+    private int delay; // The time between throws
+    private int range; // How far the monkey can throw
+    private int time;  // The counter that ticks toward the `delay`
+
+    private boolean paid; // If the monkey has been paid for
+    private int price; // How expensive the monkey is
+
+    // Constuctor for a basic Monkey
+    public Turret(){
+        delay = DEFAULT_DELAY; // 100 ticks of delay
+        range = DEFAULT_RANGE; // Range of 150
+        price = DEFAULT_PRICE; // Costs $100
+        setImage("archer.png"); // Set the image to a simple monkey
+        paid = false; // This unit has not yet been paid for
     }
-
-    // Act method to track target
-    public void act()
-    {
-        shoot();
-        /**
-        try {
-            turnTowards(target.getX(), target.getY()); // Turn towards the target
-            move(DART_SPEED); // Move forward
-
-            if(intersects(target)) { // If it hit the enemy
-                target.attack(damage); // damage the enemy
-                getWorld().removeObject(this); // Remove the dart
-            }
-        } catch(IllegalStateException e) {
-            getWorld().removeObject(this); // If the bloon doesn't exist anymore, delete yourself
-        }
-        */
-    }   
     
-    public abstract void shoot();
+     // Constuctor for a Monkey with the given stats
+    public Turret(int delay, int range, int price) {
+        this(); // Call basic constructor to set defaults
+        this.delay = delay; // Set delay
+        this.range = range; // Set range
+        this.price = price; // Set price
+    }
+    public void act() 
+    {
+        // Add your action code here.
+    }    
 }
