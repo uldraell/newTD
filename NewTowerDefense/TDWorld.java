@@ -1,3 +1,4 @@
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 
@@ -19,7 +20,7 @@ public class TDWorld extends World
     public TDWorld()
     {    
         super(1600, 900, 1); // setzt größe der Welt auf 16:9
-        Greenfoot.setSpeed(60); // setzt Geschwindigkeit des Spiels auf 60
+        Greenfoot.setSpeed(500); // setzt Geschwindigkeit des Spiels auf 60
         setBackground("weg.png");
         
         route = new Route(new Wegpunkt[]{ // Create the path for the bloons to follow
@@ -27,12 +28,18 @@ public class TDWorld extends World
             new Wegpunkt(56, 217),
             new Wegpunkt(646, 217),
             new Wegpunkt(646, 618),
+            new Wegpunkt(646, 700), //extra
+            new Wegpunkt(300, 700),
+            new Wegpunkt(300, 800),
+            new Wegpunkt(646, 618),//extra
             new Wegpunkt(1160, 618),
             new Wegpunkt(1160, 830),
             new Wegpunkt(1520, 830),
             new Wegpunkt(1520, 725),
       
         });
+        TurretButton turb = new TurretButton();
+        addObject(turb, 900, 850);
         
         delay = 0; // Set the bloon counter to 0
         //rand = new Random(); // Initialize random
@@ -46,6 +53,9 @@ public class TDWorld extends World
         showText("Lives: " + lives,  70, 10); // Draw number of lives to screen
         showText("Money: $" + money, 70, 30); // Draw amount of money to screen
 
+        //showText("x: " + Greenfoot.getMouseInfo().getX(), 500, 10);
+        //showText("y: " + Greenfoot.getMouseInfo().getY(), 500, 30);
+        
         if(lives < 0) { // If the player is out of lives, show the game over
             Greenfoot.stop(); // Stop the game
             if(Greenfoot.ask("Would you like to play again?").equalsIgnoreCase("yes")) { // Ask to play again
@@ -54,18 +64,20 @@ public class TDWorld extends World
             }
         }
         
+    
+        
         if(delay > 120) { // Check the counter for bloon spawning
             Enemy b = null; // Initialize bloon
 
             switch(Greenfoot.getRandomNumber(3)) { // Randomly choose bloon color
             case 0:
-                b = new Bandit(route);
+                b = new Troll(route,1);
                 break;
             case 1:
-                b = new Orc(route);
+                b = new Troll(route,1);
                 break;
             case 2:
-                b = new Troll(route);
+                b = new Troll(route, 1);
                 break;
             }
 
@@ -76,6 +88,11 @@ public class TDWorld extends World
             delay++; // Increment counter
         }
     
+    }
+    
+    public void placeTurret(int x, int y){
+        Tower t = new Tower();
+        addObject(t, x, y);
     }
     
     

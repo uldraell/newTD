@@ -8,6 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Orc extends Enemy
 {
+    private int hp = 100;
+    
     // Simple constructor
     public Orc(Route route)
     {
@@ -19,4 +21,24 @@ public class Orc extends Enemy
     public int numInnerBloons() {
         return 0;
     }   
+    
+    public  void switchImage(Wegpunkt ziel){
+        /**
+        if (getImage() == downup1) 
+        {
+            setImage(downup2);
+        }
+        else
+        {
+            setImage(downup1);
+        }*/
+    }
+    
+    public int getHP(){
+        return hp;
+    }
+    
+    public void setHP(int newHP){
+        hp = newHP;
+    }
 }

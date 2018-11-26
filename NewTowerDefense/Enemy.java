@@ -1,5 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
+import java.math.*;
 /**
  * Write a description of class Enemy here.
  * 
@@ -9,7 +10,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public abstract class Enemy extends BetterActor
 {
      // Path to follow
-    private Routenplaner rtplaner;
+     protected Routenplaner rtplaner;
+     //private int hp = 100;
 
     // Constructor that takes a path to follow
     public Enemy(Route route) {
@@ -26,11 +28,19 @@ public abstract class Enemy extends BetterActor
     {
         Wegpunkt next = rtplaner.next(); // Get the next point
         if(next == null) {
-            ((TDWorld) getWorld()).decreaseLives(numInnerBloons() + 1); // delete yourself and decrease lives
+            ((TDWorld) getWorld()).decreaseLives(1); // delete yourself and decrease lives
             getWorld().removeObject(this);
         } else {
             moveTo(next); // Move to the point
         }
+        
+        
+        try{
+        this.switchImage(rtplaner.nechste()); // Methode zu "animieren" der Gegner
+        } catch(IllegalStateException e) {
+            //System.out.println("Enemy try except ausgelöst");// Wenn der Gegner schon tot is wird es hier abgefangen - weiß nicht ob hier noch was hin sollte 
+            boolean dead = true;
+        }         
     }
 
     // Called when this Bloon is hit with a dart
@@ -43,7 +53,22 @@ public abstract class Enemy extends BetterActor
         };
         getWorld().removeObject(this); // Remove yourself
     }
+    
+    public void attack(int dmg){
+        if((this.getHP() - dmg) <= 0){
+            ((TDWorld) getWorld()).addMoney(); // Increment the money counter
+            getWorld().removeObject(this);
+        } else {
+            this.setHP(this.getHP() - dmg);
+        }
+    }
+    
+    public abstract void switchImage(Wegpunkt ziel);
 
     // Get the number of bloons to release when popped
     public abstract int numInnerBloons();
+    
+    public abstract int getHP();
+    
+    public abstract void setHP(int newHP);
 }

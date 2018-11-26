@@ -43,6 +43,14 @@ public class Routenplaner
 
          return (vorher = new Wegpunkt(x, y)); // Return a point with the new cooridnates
      }
+     
+     public Wegpunkt nechste(){
+         if(zielnummer == route.getPoints().length) // Check if it was the final point
+                 return ziel = route.getPoints()[zielnummer-1];;
+         ziel = route.getPoints()[zielnummer]; // Set the new target
+         
+         return ziel;
+        }
 
      // Return a duplicate of itself
      public Routenplaner clone() {

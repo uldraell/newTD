@@ -22,8 +22,8 @@ public class Tower1 extends Tower
     
     public void act()
     {
-        @Override
-        getWorld().addObject(new Turret(target), getX(), getY());
+        //@Override
+        //getWorld().addObject(new Turret(target), getX(), getY());
         
         
         

@@ -19,7 +19,7 @@ public class Wegpunkt
     public int getX()  {
         return x;
     }
-
+    
     // Get Y
     public int getY() {
         return y;

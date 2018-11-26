@@ -73,7 +73,7 @@ public class Tower extends BetterActor
 
             Enemy target = (Enemy) possible.get(0); // Get the first possible target
             turnTowards(target.getX(), target.getY()); // Turn towards it
-            getWorld().addObject(new Turret(target), getX(), getY()); // Spawn a dart targeting it
+            getWorld().addObject(new ProjectileTurret(target), getX(), getY()); // Spawn a dart targeting it
 
             time = 0; // Reset timer
         }else {
