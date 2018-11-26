@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=Magie
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ magie\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Objekt\ welches\ den\ Gegner\ verfolgt,\ angreift\ und\ t\u00F6tet.\r\n\ \r\n\ \r\n
+comment1.params=target
+comment1.target=Magie(Enemy)
+comment1.text=\r\n\ \u00DCbergibt\ den\ Konstruktor\ das\ Ziel.\r\n\ Legt\ das\ Bild\ fest.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Die\ Methode\ wird\ st\u00E4ndig\ ausgef\u00FChrt\r\n\ \r\n
+comment3.params=
+comment3.target=void\ angreifen()
+comment3.text=\r\n\ Das\ Objekt\ dreht\ sich\ in\ Richtung\ des\ Ziels.\r\n\ Und\ bewegt\ sich\ in\ die\ Richtung.\r\n\ Falls\ es\ auf\ einen\ Gegner\ trifft,\ bekommt\ er\ Schaden\ und\ das\ Objekt\ wird\ entfernt.\r\n\ Wenn\ der\ Gegner\ schon\ tot\ ist\ bevor,\ das\ Objekt\ ihn\ treffen\ konnte,\ wirdes\ entfernt.\r\n\ \r\n
+numComments=4

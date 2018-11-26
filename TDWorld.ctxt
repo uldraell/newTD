@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=TDWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ TDWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ TDWorld\ ist\ die\ Welt\ in\ der\ das\ Spiel\ stattfindet.\r\n\ \r\n\ \r\n\ \r\n
+comment1.params=
+comment1.target=TDWorld()
+comment1.text=\r\n\ Legt\ die\ Gr\u00F6\u00DFe\ der\ Welt\ fest.\r\n\ Legt\ die\ Geschwindigkeit\ des\ Spieles\ fest.\r\n\ Legt\ das\ Hintergrundbild\ fest.\r\n\ Erstellt\ einen\ Weg\ den\ die\ Enemy\u00B4s\ folgen.\r\n\ \r\n\ Erstellt\ einen\ beweglichen\ Button\ der\ es\ erm\u00F6glicht\ Turrets\ zu\ platzieren.\r\n\ Legt\ den\ Startwert\ f\u00FCr\ den\ Abstand\ der\ zu\ spawnenden\ Gegner\ fest.\r\n\ Legt\ das\ Startgold\ fest.\r\n\ Legt\ fest\ wieviel\ Leben\ der\ Spieler\ hat.\r\n\ \r\n
+comment2.params=
+comment2.target=void\ act()
+comment2.text=\r\n\ Zeigt\ das\ Geld\ des\ Spielers\ an.\r\n\ Zeigt\ das\ Leben\ des\ Spieler\ an.\r\n\ Wenn\ der\ Spieler\ kein\ Leben\ mehr\ hat,\ stoppt\ das\ Spiel\ und\ wird\ gefragt\ ob\ er\ nochmal\ spielen\ m\u00F6chte.\r\n\ Wenn\ er\ "ja"\ sagt,\ wird\ die\ Welt\ resetet\ und\ das\ Spiel\ beginnt\ von\ vorn.\r\n\ int\ rand\r\n\ Nach\ einer\ festgelegten\ Zeit\ spawnt\ zuf\u00E4llig\ einer\ der\ verschiedenen\ Gegner.\r\n\ \r\n\r\n
+comment3.params=x\ y
+comment3.target=void\ placeBallistae(int,\ int)
+comment3.text=\r\n\ Plaziert\ eine\ Balliste\ an\ den\ gew\u00FCnschten\ Koordinaten.\r\n\ @param\ x\ ist\ die\ x-Koordinate\ an\ der\ die\ Balliste\ platziert\ wird.\r\n\ @param\ y\ ist\ die\ y-Koordiante\ an\ der\ die\ Balliste\ platziert\ wrid.\r\n\ \r\n\ \r\n
+comment4.params=deaths
+comment4.target=void\ decreaseLives(int)
+comment4.text=\r\n\ Subtrahiert\ eine\ gewisse\ Anzahl\ an\ Leben\ von\ dem\ Spieler.\r\n\ \r\n
+comment5.params=amount
+comment5.target=void\ addMoney(int)
+comment5.text=\r\n\ F\u00FCgt\ dem\ Spieler\ Geld\ hinzu.\r\n
+comment6.params=cash
+comment6.target=void\ removeMoney(int)
+comment6.text=\r\n\ Subtrahiert\ eine\ gewisse\ Anzahl\ an\ Geld\ von\ dem\ Spieler.\r\n\ \r\n
+comment7.params=
+comment7.target=int\ getMoney()
+comment7.text=\r\n\ Bekommt\ die\ Anzahl\ an\ Geld.\r\n\ Und\ wird\ auf\ der\ Spielfl\u00E4che\ angezeigt.\r\n
+numComments=8
