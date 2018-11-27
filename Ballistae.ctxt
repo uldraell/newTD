@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=Ballistae
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Ballistae\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Bek\u00E4mpft\ Gegner.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Ballistae()
+comment1.text=\r\n\ Konstrukor\ nimmt\ Werte\ f\u00FCr\ die\ Zeit\ zwischen\ Sch\u00FCssen,\ die\ Reichweite\ und\ den\ Preis\ entgegen.\r\n\ Legt\ das\ Bild\ fest.\r\n\ Pr\u00FCft\ ob\ ein\ Tower\ bezahlt\ wurde.\r\n
 comment2.params=
 comment2.target=void\ act()
-comment2.text=\r\n\ \ \ \ public\ Ballistae(int\ delay,\ int\ range,\ int\ price){\r\n\ \ \ \ \ \ \ \ this();\ //\ Call\ basic\ constructor\ to\ set\ defaults\r\n\ \ \ \ \ \ \ \ this.delay\ \=\ delay;\ //\ Set\ delay\r\n\ \ \ \ \ \ \ \ this.range\ \=\ range;\ //\ Set\ range\r\n\ \ \ \ \ \ \ \ this.price\ \=\ price;\ //\ Set\ price\r\n\ \ \ \ \ \ \ \ \r\n\ \ \ \ \ \ \ \ //super(50,200,100);\r\n\ \ \ \ \ \ \ \ setImage("../images/turrets/crossbow.png");\r\n\ \ \ \ \ \ \ \ paid\ \=\ false;\r\n\ \ \ \ }\r\n
+comment2.text=\r\n\ Pr\u00FCft\ ob\ sich\ der\ Spieler\ das\ platzieren\ der\ T\u00FCrme\ leisten\ kann.\r\n\ Sucht\ n\u00E4chst-besten\ Gegner\ raus.\r\n\ Greift\ den\ Gegner\ an.\r\n\ Resetet\ den\ Timer.\r\n
 numComments=3

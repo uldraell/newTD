@@ -2,7 +2,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Bandit here.
+ * Schwächster Gegner.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -10,31 +10,26 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Bandit extends Enemy
 {
     
-     private int hp = 100;
+     private int hp = 30;
      
-        // Constructor takes a path to follow
+     /**
+      * @see Enemy
+      */
+     
      public Bandit(Route route)
      {     
-        super(route); // Pass a path to follow
-        setImage("bandit.png"); // Set the image to a red bloon
+        super(route);
+        setImage("bandit.png");
      }
      
 
-        // Constructor takes a path iterator to continue
+     /**
+      * @see Enemy
+      */   
      public Bandit(Routenplaner route)
      {
-         super(route); // Pass a pathiterator to continue
-         setImage("bandit.png"); // Set the image to a red bloon
-     }
-
-        // When it is popped, only delete yourself
-     public void pop() {
-         getWorld().removeObject(this);
-     }
-
-        // get the number of bloons to be spawned when popped
-     public int numInnerBloons() {
-         return 0;
+         super(route);
+         setImage("bandit.png");
      }
      
      public  void switchImage(Wegpunkt ziel){
@@ -56,8 +51,10 @@ public class Bandit extends Enemy
      public void setHP(int newHP){
         hp = newHP;
      }
-     
-     public int getBounty(){
+     /**
+      * @see Enemy
+      */
+      public int getBounty(){
         return 100;
-    }
+     }
 }

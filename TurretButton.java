@@ -14,7 +14,7 @@ public class TurretButton extends BetterActor
      */
     
     public TurretButton(){
-        setImage("../images/buttons/turret1.png");
+        setImage("../images/buttons/crossbowbutton.png");
     }
     
     public void act() 
@@ -29,10 +29,11 @@ public class TurretButton extends BetterActor
         if (Greenfoot.mouseDragEnded(this))
         {
             Actor choice = getOneIntersectingObject(TurretButton.class);
-            ((TDWorld) getWorld()).placeBallistae(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            ((TDWorld) getWorld()).placeTower1(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY());
+            ((TDWorld) getWorld()).placeBallistae(Greenfoot.getMouseInfo().getX(), Greenfoot.getMouseInfo().getY()); 
             if (choice != null) setLocation(choice.getX(), choice.getY());
             // optional else block
-            else setLocation(900,850);
+            else setLocation(823,46);
         }
         
     }    

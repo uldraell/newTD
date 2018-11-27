@@ -1,7 +1,8 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.*;
 /**
- * Write a description of class Level here.
+ * Konzept für interessantes Leveldesign.
+ * Ausbalanciertes Power-system.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -12,13 +13,18 @@ public class Stage extends BetterActor
     private static List<Integer> wellen = new ArrayList<>();
     private static int levelindex;
     
-    
-    public Stage()//Wellen[] welle)
+    /**
+     * Initialisiert die Gegnerreihenfolge des ersten Levels.
+     */
+    public Stage()
     {
         startlevel1();  
         
     }
     
+    /**
+     * Soll zum nächsten Level wechseln, wenn das erste fertig ist.
+     */
     public int changelevel(int levelindex){
         try{
                 
@@ -44,6 +50,9 @@ public class Stage extends BetterActor
             
     }
     
+    /**
+     * Gibt die Nummer des Gegners an der Indexstelle des Arrays zurück.
+     */
     public int getEnemy(int index){
         try{
             return wellen.get(index);
@@ -52,6 +61,9 @@ public class Stage extends BetterActor
             }
     }
     
+    /**
+     * Löscht bisherige Gegnerreihenfolge aus dem Array und fügt die für dieses Level passende ein.
+     */
     public void startlevel1(){
        wellen.clear();
        levelindex = 1;
@@ -63,6 +75,9 @@ public class Stage extends BetterActor
        wellen.add(1);
     }
     
+    /**
+     * Löscht bisherige Gegnerreihenfolge aus dem Array und fügt die für dieses Level passende ein.
+     */    
     public void startlevel2(){
         wellen.clear();
         levelindex = 2;
@@ -74,6 +89,9 @@ public class Stage extends BetterActor
         wellen.add(2);
     }
     
+    /**
+     * Löscht bisherige Gegnerreihenfolge aus dem Array und fügt die für dieses Level passende ein.
+     */   
     public void startlevel3(){
         wellen.clear();
         levelindex = 3;

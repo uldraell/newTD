@@ -1,10 +1,13 @@
 #BlueJ class context
 comment0.target=Tower
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Tower\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Oberklasse\ der\ T\u00FCrme.\r\n\ T\u00FCrme\ bek\u00E4mpfen\ Gegner.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Tower()
+comment1.text=\r\n\ Konstrukor\ nimmt\ Werte\ f\u00FCr\ die\ Zeit\ zwischen\ Sch\u00FCssen,\ die\ Reichweite\ und\ den\ Preis\ entgegen.\r\n\ Legt\ das\ Bild\ fest.\r\n\ Pr\u00FCft\ ob\ ein\ Tower\ bezahlt\ wurde.\r\n
 comment2.params=delay\ range\ price
 comment2.target=Tower(int,\ int,\ int)
+comment2.text=\r\n\ Konstruktor\ der\ spezielle\ Werte\ annimmt.\r\n
 comment3.params=
 comment3.target=void\ act()
+comment3.text=\r\n\ Pr\u00FCft\ ob\ sich\ der\ Spieler\ das\ platzieren\ der\ T\u00FCrme\ leisten\ kann.\r\n\ Sucht\ n\u00E4chst-besten\ Gegner\ raus.\r\n\ Greift\ den\ Gegner\ an.\r\n\ Resetet\ den\ Timer.\r\n
 numComments=4

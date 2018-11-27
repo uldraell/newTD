@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Orc here.
+ * Normaler Gegner.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -10,18 +10,15 @@ public class Orc extends Enemy
 {
     private int hp = 100;
     
-    // Simple constructor
+    /**
+     * @see Enemy
+     */
     public Orc(Route route)
     {
-        super(route); // Call super
-        setImage("orc.png"); // Set the correct image
+        super(route);
+        setImage("orc.png");
     }
 
-    // Get the number of bloons to create on pop
-    public int numInnerBloons() {
-        return 0;
-    }   
-    
     public  void switchImage(Wegpunkt ziel){
         /**
         if (getImage() == downup1) 
@@ -42,6 +39,9 @@ public class Orc extends Enemy
         hp = newHP;
     }
     
+    /**
+     * @see Enemy
+     */
     public int getBounty(){
         return 100;
     }

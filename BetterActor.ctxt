@@ -1,13 +1,13 @@
 #BlueJ class context
 comment0.target=BetterActor
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ BetterActor\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ BetterActor\r\n\ \r\n
+comment0.text=\r\n\ Diese\ Klasse\ dient\ zur\ besseren\ Berechnung\ der\ Bewegungen\ der\ Actoren\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=x
 comment1.target=void\ setX(int)
-comment1.text=\r\n\ Legt\ die\ x-Koordinate\ fest.\r\n\ Bekommt\ die\ Richtung\ und\ dreht\ sich\ in\ Richtung\ des\ Zieles.\r\n\ ...\r\n\ \r\n
+comment1.text=\r\n\ berechnent\ die\ Distanz\ zum\ Ziel\r\n\ bewegt\ den\ Actor\ in\ Richtung\ des\ Ziels\r\n
 comment2.params=y
 comment2.target=void\ setY(int)
-comment2.text=\r\n\ ...\r\n\ \r\n
+comment2.text=\r\n\ berechnent\ die\ Distanz\ zum\ Ziel\r\n\ bewegt\ den\ Actor\ in\ Richtung\ des\ Ziels\r\n
 comment3.params=wegpunkt
 comment3.target=void\ moveTo(Wegpunkt)
-comment3.text=\r\n\ Setzt\ die\ x-Koordinate\ mit\ der\ eines\ Punktes\ gleich.\r\n\ Setzt\ die\ y-Koordinate\ mit\ der\ eines\ Punktes\ gleich.\r\n\ \r\n
+comment3.text=\r\n\ Ein\ Actor\ bekommt\ die\ x\ und\ y\ Koordinaten\ als\ Punkt\ \u00FCbergeben\r\n\ und\ wird\ dann\ an\ diese\ Koordinaten\ platziert\r\n
 numComments=4

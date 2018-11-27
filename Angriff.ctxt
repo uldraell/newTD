@@ -1,10 +1,9 @@
 #BlueJ class context
 comment0.target=Angriff
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Angriff\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n\ \r\n\ Objekte\ die\ das\ Ziel\ verfolgen\ und\ angreifen.\r\n\ \r\n\ \r\n\ \r\n
+comment0.text=\r\n\ Alle\ Angriffe\ der\ Tower\ (Jeder\ Schuss,\ usw.,\ wird\ als\ einzelnes\ Objekt\ dargestellt\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=target
 comment1.target=Angriff(Enemy)
-comment1.text=\r\n\ Legt\ den\ Gegner\ als\ Ziel\ fest.\r\n\ \r\n
+comment1.text=\r\n\ Legt\ den\ gegner\ als\ Ziel\ fest\r\n
 comment2.params=
 comment2.target=void\ angreifen()
-comment2.text=\r\n\ \ \ \ public\ void\ act()\ \r\n\ \ \ \ {\r\n\ \ \ \ \ \ \ \ angreifen();\r\n\ \ \ \ }\ \ \ \ \r\n
 numComments=3

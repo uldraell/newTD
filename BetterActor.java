@@ -2,56 +2,44 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 import java.lang.*;
 /**
- * Write a description of class BetterActor here.
+ * Diese Klasse dient zur besseren Berechnung der Bewegungen der Actoren
  * 
  * @author (your name) 
  * @version (a version number or a date)
- * 
- * BetterActor
- * 
  */
-
 public class BetterActor extends Actor
 {
     /**
-     * Legt die x-Koordinate fest.
-     * Bekommt die Richtung und dreht sich in Richtung des Zieles.
-     * ...
-     * 
+     * berechnent die Distanz zum Ziel
+     * bewegt den Actor in Richtung des Ziels
      */
-    
-    // Set the actor's X coordinate
     public void setX(int x) {
-        int rot = getRotation(); // Get initial rotation
-        int deltaX = x- getX();  // Find distance from target
-        setRotation(0);          // Turn towards target
-        move(deltaX);            // Move correct distance
-        setRotation(rot);        // Reset rotation
+        int rot = getRotation(); 
+        int deltaX = x- getX();  
+        setRotation(0);          
+        move(deltaX);            
+        setRotation(rot);        
     }
-    
+
     /**
-     * ...
-     * 
+     * berechnent die Distanz zum Ziel
+     * bewegt den Actor in Richtung des Ziels
      */
-    
-    // Set the actor's Y coordinate
     public void setY(int y) {
-        int rot = getRotation(); // Get initial rotation
-        int deltaY = y - getY(); // Find distance from target
-        setRotation(90);         // Turn towards target
-        move(deltaY);            // Move correct distance
-        setRotation(rot);        // Reset rotation
+        int rot = getRotation(); 
+        int deltaY = y - getY(); 
+        setRotation(90);         
+        move(deltaY);            
+        setRotation(rot);        
     }
+
     
     /**
-     * Setzt die x-Koordinate mit der eines Punktes gleich.
-     * Setzt die y-Koordinate mit der eines Punktes gleich.
-     * 
+     * Ein Actor bekommt die x und y Koordinaten als Punkt übergeben
+     * und wird dann an diese Koordinaten platziert
      */
-    
-    // Set the actor's X and Y coordinates to that of a Point
     public void moveTo(Wegpunkt wegpunkt) {
-        setX(wegpunkt.getX()); // Set X coordinate
-        setY(wegpunkt.getY()); // Set Y coordinate
+        setX(wegpunkt.getX()); 
+        setY(wegpunkt.getY()); 
     }
 }

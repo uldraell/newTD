@@ -1,12 +1,13 @@
 #BlueJ class context
 comment0.target=Routenplaner
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Routenplaner\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Das\ Werkzeug\ um\ die\ Route\ zu\ nutzen.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=route
 comment1.target=Routenplaner(Route)
+comment1.text=\r\n\ Konstruktor\ nimmt\ einen\ Weg\ an,\ dem\ er\ dann\ folgt.\r\n
 comment2.params=
 comment2.target=Wegpunkt\ next()
+comment2.text=\r\n\ Berechnet\ den\ n\u00E4chsten\ Schritt\ zum\ n\u00E4chsten\ Zielpunkt.\r\n
 comment3.params=
 comment3.target=Wegpunkt\ nechste()
-comment4.params=
-comment4.target=Routenplaner\ clone()
-numComments=5
+comment3.text=\r\n\ Gibt\ den\ n\u00E4chsten\ Wegpunkt\ auf\ der\ Route\ zur\u00FCck.\r\n
+numComments=4

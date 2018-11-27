@@ -1,32 +1,17 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot und MouseInfo)
 
 /**
- * Write a description of class Tower1 here.
+ * Ergänzen Sie hier eine Beschreibung für die Klasse Tower1.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Ihr Name) 
+ * @version (eine Versionsnummer oder ein Datum)
  */
-public class Tower1 extends Tower
+public class Tower1 extends TurretButton
 {
-    /**
-     * Act - do whatever the Tower1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public Tower1() 
+
+    public Tower1()
     {
-        // Add your action code here
-        super(100, 150, 100);
-        setImage("zauberer.png");
-        
-    }  
-    
-    public void act()
-    {
-        //@Override
-        //getWorld().addObject(new Turret(target), getX(), getY());
-        
-        
-        
-        
+        setImage("../images/tower/tower1.png");
     }
+    
 }

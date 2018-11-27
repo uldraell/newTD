@@ -2,42 +2,53 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.List;
 import java.util.ListIterator;
 /**
- * Write a description of class Magier here.
+ * Bekämpft Gegner.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Magier extends Turret
 {
-    private int delay; // The time between throws
-    private int range; // How far the monkey can throw
-    private int time;  // The counter that ticks toward the `delay`
+    private int delay;
+    private int range;
+    private int time;
 
-    private boolean paid; // If the monkey has been paid for
-    private int price; // How expensive the monkey is
+    private boolean paid;
+    private int price;
     
-     public Magier(){
-        delay = DEFAULT_DELAY; // 100 ticks of delay
-        range = DEFAULT_RANGE; // Range of 150
-        price = DEFAULT_PRICE; // Costs $100
-        setImage("../images/turrets/mage_high2.png"); // Set the image to a simple monkey
-        paid = false; // This unit has not yet been paid for
+    /**
+     * Konstrukor nimmt Werte für die Zeit zwischen Schüssen, die Reichweite und den Preis entgegen.
+     * Legt das Bild fest.
+     * Prüft ob ein Tower bezahlt wurde.
+     */        
+    public Magier(){
+        delay = DEFAULT_DELAY;
+        range = DEFAULT_RANGE; 
+        price = DEFAULT_PRICE;
+        setImage("../images/turrets/mage_high2.png");
+        paid = false;
     }
     
+    /**
+     * Prüft ob sich der Spieler das platzieren der Türme leisten kann.
+     * Sucht nächst-besten Gegner raus.
+     * Greift den Gegner an.
+     * Resetet den Timer.
+     */    
     public void act() 
     {
         
-        if(!paid) { // If this unit hasn't been paid for yet
-            if(price <= ((TDWorld) getWorld()).getMoney()) { // If the player has enough
-                ((TDWorld) getWorld()).removeMoney(price); // Subtract the price from money count
-                paid = true; // The unit has been paid for
+        if(!paid) {
+            if(price <= ((TDWorld) getWorld()).getMoney()) {
+                ((TDWorld) getWorld()).removeMoney(price);
+                paid = true;
             } else {
-                 getWorld().removeObject(this); // Unit can't be paid for, delete it
+                 getWorld().removeObject(this);
             }
         }
 
-        if(delay < time) { // If it's time to throw a dart
-            List<Actor> possible = getObjectsInRange(range, Actor.class); // Look for possible targets
+        if(delay < time) {
+            List<Actor> possible = getObjectsInRange(range, Actor.class);
 
             ListIterator<Actor> itr = possible.listIterator();
             while (itr.hasNext()) {
@@ -46,16 +57,17 @@ public class Magier extends Turret
                 }
             }
             
-            if(possible.size() == 0) // If there is none, give up
+            if(possible.size() == 0)
                 return;
 
-            Enemy target = (Enemy) possible.get(0); // Get the first possible target
-            turnTowards(target.getX(), target.getY()); // Turn towards it
-            getWorld().addObject(new Magie(target), getX(), getY()); // Spawn a dart targeting it
+            Enemy target = (Enemy) possible.get(0);
+            turnTowards(target.getX(), target.getY());
+            getWorld().addObject(new Magie(target), getX(), getY());
+            Greenfoot.playSound("../sounds/magic.wav");
 
-            time = 0; // Reset timer
+            time = 0;
         }else {
-            time++; // Increment timer
+            time++;
         }
     }    
 }

@@ -1,16 +1,22 @@
 #BlueJ class context
 comment0.target=Stage
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Level\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Konzept\ f\u00FCr\ interessantes\ Leveldesign.\r\n\ Ausbalanciertes\ Power-system.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=Stage()
+comment1.text=\r\n\ Initialisiert\ die\ Gegnerreihenfolge\ des\ ersten\ Levels.\r\n
 comment2.params=levelindex
 comment2.target=int\ changelevel(int)
+comment2.text=\r\n\ Soll\ zum\ n\u00E4chsten\ Level\ wechseln,\ wenn\ das\ erste\ fertig\ ist.\r\n
 comment3.params=index
 comment3.target=int\ getEnemy(int)
+comment3.text=\r\n\ Gibt\ die\ Nummer\ des\ Gegners\ an\ der\ Indexstelle\ des\ Arrays\ zur\u00FCck.\r\n
 comment4.params=
 comment4.target=void\ startlevel1()
+comment4.text=\r\n\ L\u00F6scht\ bisherige\ Gegnerreihenfolge\ aus\ dem\ Array\ und\ f\u00FCgt\ die\ f\u00FCr\ dieses\ Level\ passende\ ein.\r\n
 comment5.params=
 comment5.target=void\ startlevel2()
+comment5.text=\r\n\ L\u00F6scht\ bisherige\ Gegnerreihenfolge\ aus\ dem\ Array\ und\ f\u00FCgt\ die\ f\u00FCr\ dieses\ Level\ passende\ ein.\r\n
 comment6.params=
 comment6.target=void\ startlevel3()
+comment6.text=\r\n\ L\u00F6scht\ bisherige\ Gegnerreihenfolge\ aus\ dem\ Array\ und\ f\u00FCgt\ die\ f\u00FCr\ dieses\ Level\ passende\ ein.\r\n
 numComments=7

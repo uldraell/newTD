@@ -1,37 +1,40 @@
 /**
- * Write a description of class Routenplaner here.
+ * Das Werkzeug um die Route zu nutzen.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
 public class Routenplaner  
 {
-     private Route route; // The path to follow
-     private Wegpunkt ziel; // The point currently working towards
-     private int zielnummer; // The index of the target
-     private Wegpunkt vorher; // The last point returned
+     private Route route;
+     private Wegpunkt ziel;
+     private int zielnummer;
+     private Wegpunkt vorher;
 
-     // Constructor, accepts a path to follow
+     /**
+      * Konstruktor nimmt einen Weg an, dem er dann folgt.
+      */
      public Routenplaner(Route route) {
-         this.route = route; // Set the path
-         this.zielnummer = 0; // Set the target index
-         this.ziel = route.getPoints()[zielnummer]; // Set the target to the first point
-         this.vorher = route.getPoints()[zielnummer]; // Set the last point to be the first point
+         this.route = route;
+         this.zielnummer = 0;
+         this.ziel = route.getPoints()[zielnummer];
+         this.vorher = route.getPoints()[zielnummer];
      }
 
-     // Get the next point on the path
+     /**
+      * Berechnet den nächsten Schritt zum nächsten Zielpunkt.
+      */
      public Wegpunkt next() {
-         if(vorher.equals(ziel)) { // If the last one returned was the target
-             zielnummer++; // Increment the targetIndex
-             if(zielnummer == route.getPoints().length) // Check if it was the final point
+         if(vorher.equals(ziel)) {
+             zielnummer++;
+             if(zielnummer == route.getPoints().length)
                  return null;
-             ziel = route.getPoints()[zielnummer]; // Set the new target
+             ziel = route.getPoints()[zielnummer];
          }
 
-         int x = vorher.getX(); // Get X from the last point
-         int y = vorher.getY(); // Get Y from the last point
-
-         // Add or subtract one to bring the point a step closer
+         int x = vorher.getX();
+         int y = vorher.getY();
+        
          if(ziel.getX() > vorher.getX())
              x++;
          if(ziel.getX() < vorher.getX())
@@ -41,24 +44,17 @@ public class Routenplaner
          if(ziel.getY() < vorher.getY())
              y--;
 
-         return (vorher = new Wegpunkt(x, y)); // Return a point with the new cooridnates
+         return (vorher = new Wegpunkt(x, y));
      }
      
+     /**
+      * Gibt den nächsten Wegpunkt auf der Route zurück.
+      */
      public Wegpunkt nechste(){
-         if(zielnummer == route.getPoints().length) // Check if it was the final point
+         if(zielnummer == route.getPoints().length)
                  return ziel = route.getPoints()[zielnummer-1];;
-         ziel = route.getPoints()[zielnummer]; // Set the new target
+         ziel = route.getPoints()[zielnummer];
          
          return ziel;
         }
-
-     // Return a duplicate of itself
-     public Routenplaner clone() {
-         Routenplaner n = new Routenplaner(route); // Create a new PathIterator
-         n.route = route; // Set path
-         n.ziel = ziel; // Set target
-         n.zielnummer = zielnummer; // Set targetIndex
-         n.vorher = vorher; // Set last
-         return n; // return it
-     }
 }

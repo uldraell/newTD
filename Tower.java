@@ -4,7 +4,8 @@ import java.util.ListIterator;
 
 
 /**
- * Write a description of class Tower here.
+ * Oberklasse der Türme.
+ * Türme bekämpfen Gegner.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -21,45 +22,56 @@ public class Tower extends BetterActor
     private static int DEFAULT_RANGE = 150;
     private static int DEFAULT_PRICE = 100;
 
-    private int delay; // The time between throws
-    private int range; // How far the monkey can throw
-    private int time;  // The counter that ticks toward the `delay`
+    private int delay;
+    private int range;
+    private int time;
 
-    private boolean paid; // If the monkey has been paid for
-    private int price; // How expensive the monkey is
+    private boolean paid;
+    private int price;
 
-    // Constuctor for a basic Monkey
+    /**
+     * Konstrukor nimmt Werte für die Zeit zwischen Schüssen, die Reichweite und den Preis entgegen.
+     * Legt das Bild fest.
+     * Prüft ob ein Tower bezahlt wurde.
+     */
     public Tower() {
-        delay = DEFAULT_DELAY; // 100 ticks of delay
-        range = DEFAULT_RANGE; // Range of 150
-        price = DEFAULT_PRICE; // Costs $100
-        setImage("archer.png"); // Set the image to a simple monkey
-        paid = false; // This unit has not yet been paid for
+        delay = DEFAULT_DELAY;
+        range = DEFAULT_RANGE;
+        price = DEFAULT_PRICE;
+        setImage("../images/troll/test.png");
+        paid = false;
     }
 
-    // Constuctor for a Monkey with the given stats
+    /**
+     * Konstruktor der spezielle Werte annimmt.
+     */
     public Tower(int delay, int range, int price) {
-        this(); // Call basic constructor to set defaults
-        this.delay = delay; // Set delay
-        this.range = range; // Set range
-        this.price = price; // Set price
+        this();
+        this.delay = delay;
+        this.range = range;
+        this.price = price;
     }
 
-    // Act method to throw darts
+    /**
+     * Prüft ob sich der Spieler das platzieren der Türme leisten kann.
+     * Sucht nächst-besten Gegner raus.
+     * Greift den Gegner an.
+     * Resetet den Timer.
+     */
     public void act()
     {
 
-        if(!paid) { // If this unit hasn't been paid for yet
-            if(price <= ((TDWorld) getWorld()).getMoney()) { // If the player has enough
-                ((TDWorld) getWorld()).removeMoney(price); // Subtract the price from money count
-                paid = true; // The unit has been paid for
+        if(!paid) { 
+            if(price <= ((TDWorld) getWorld()).getMoney()) { 
+                ((TDWorld) getWorld()).removeMoney(price); 
+                paid = true;
             } else {
-                 getWorld().removeObject(this); // Unit can't be paid for, delete it
+                 getWorld().removeObject(this);
             }
         }
 
-        if(delay < time) { // If it's time to throw a dart
-            List<Actor> possible = getObjectsInRange(range, Actor.class); // Look for possible targets
+        if(delay < time) {
+            List<Actor> possible = getObjectsInRange(range, Actor.class);
 
             ListIterator<Actor> itr = possible.listIterator();
             while (itr.hasNext()) {
@@ -68,16 +80,16 @@ public class Tower extends BetterActor
                 }
             }
             
-            if(possible.size() == 0) // If there is none, give up
+            if(possible.size() == 0)
                 return;
 
-            Enemy target = (Enemy) possible.get(0); // Get the first possible target
-            turnTowards(target.getX(), target.getY()); // Turn towards it
-            getWorld().addObject(new Magie(target), getX(), getY()); // Spawn a dart targeting it
+            Enemy target = (Enemy) possible.get(0);
+            turnTowards(target.getX(), target.getY());
+            getWorld().addObject(new Magie(target), getX(), getY());
 
-            time = 0; // Reset timer
+            time = 0;
         }else {
-            time++; // Increment timer
+            time++;
         }
     }
 }
